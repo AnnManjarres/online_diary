@@ -1,0 +1,27 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login: My Journal</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <%- include('./header.ejs') %>
+    <div class="container">
+        <h2>Log in</h2>
+        <div class="card">
+            <form action="">
+                <input id="username" type="text" name="username" placeholder="Usuario">
+                <input id="password" type="password" name="password" placeholder="Password">
+                <button type="submit" onclick="loginUser(event)">Iniciar sesion</button>
+                <hr>
+                <a href="/signup">Todavia no tienes una cuenta?</a>
+            </form>
+        </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/login.js"></script>
+</body>

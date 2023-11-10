@@ -1,0 +1,40 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio: My Journal</title>
+    <link rel="stylesheet" href="/css/entries.css">
+</head>
+<body>
+    <header>
+        <h1>My journal app</h1>
+        <a onclick="logoutUser()">Log out</a>
+    </header>
+    <div class="container">
+        <h2>Hola, <%= user.username %>!</h2>
+        <% if(entries.length > 0) { %>
+        <h3>Tus entradas:</h3>
+        <% entries.forEach((entry) => { %>
+        
+        <div class="entry" onclick="getSingleEntry('<%= entry.id %>')">  
+            <p><%= entry.content %></p>
+            <span><%= entry.createdAt %></span>
+        </div>
+
+        <% })
+        }  %>
+
+        <% if(entries.length == 0) { %>
+
+        <h3 class="entry">No hay entradas... ¿Quieres agregar una?</h3>
+        <% }  %>
+
+        <div class="add-entry-button">
+            <a href="/add-entry">Agregar entrada</a>
+        </div>
+        
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/entries.js"></script>
+</body>

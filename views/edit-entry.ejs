@@ -1,0 +1,34 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio: My Journal</title>
+    <link rel="stylesheet" href="/css/entries.css">
+</head>
+<body>
+    <header>
+        <h1>My journal app</h1>
+        <a onclick="logoutUser()">Log out</a>
+    </header>
+    <div class="container">
+        <h2>Agrega una nueva entrada</h2>
+        
+        <div class="entry" style="padding: 20px">
+            <h3>¿Que tal estuvo tu dia?</h3>
+            <form>
+                <textarea name="content" id="content" rows="5"><%= entry.content %></textarea>
+                <button class="btn" onclick="editEntry(event, '<%= entry.id %>')">Editar entrada</button>
+            </form>
+            <button class="delete" onclick="deleteEntry('<%= entry.id %>')">Eliminar</button>
+        </div>
+
+   
+        <div class="add-entry-button">
+            <a href="/entries/home">Volver</a>
+        </div>
+        
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/entries.js"></script>
+</body>

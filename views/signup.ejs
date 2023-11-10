@@ -1,0 +1,27 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login: My Journal</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <%- include('./header.ejs') %>
+    <div class="container">
+        <h2>Registro</h2>
+        <div class="card">
+            <form>
+                <input id="fullname" type="text" name="fullname" placeholder="Nombre">
+                <input id="username"  type="text" name="username" placeholder="Usuario">
+                <input id="password"  type="password" name="password" placeholder="Password">
+                <button type="submit" onclick="createNewUser(event)">Crear</button>
+                <hr>
+                <a href="/login">Ya tienes una cuenta?</a>
+            </form>
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/signup.js"></script>
+</body>
